@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cgpu-info"
-version = "0.1.0"
+version = "0.1.1"
 description = "Quick CUDA/GPU status summary for ML engineers"
 readme = "README.md"
 license = "MIT"
@@ -33,7 +33,6 @@ dependencies = [
 [project.optional-dependencies]
 full = [
     "torch",
-    "pynvml",
 ]
 
 [project.urls]

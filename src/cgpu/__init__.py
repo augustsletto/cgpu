@@ -2,7 +2,7 @@
 
 import sys
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 def cgpu() -> str:
     """
@@ -25,7 +25,6 @@ def cgpu() -> str:
     LINE = "=" * 39
     CHECK = "[OK]" if sys.platform == "win32" else "✓"
     CROSS = "[X]" if sys.platform == "win32" else "✗"
-    DEG = "C" if sys.platform == "win32" else "°C"
 
     # Check PyTorch CUDA availability
     try:
@@ -67,32 +66,6 @@ def cgpu() -> str:
                     print(f"{Fore.WHITE}      Reserved: {Fore.CYAN}{mem_reserved:.2f} GB{Style.RESET_ALL}")
                 except:
                     pass
-
-        # Try to get temperature via pynvml
-        try:
-            import pynvml
-            pynvml.nvmlInit()
-            for i in range(gpu_count):
-                handle = pynvml.nvmlDeviceGetHandleByIndex(i)
-                temp = pynvml.nvmlDeviceGetTemperature(handle, pynvml.NVML_TEMPERATURE_GPU)
-                util = pynvml.nvmlDeviceGetUtilizationRates(handle)
-
-                # Color code temperature
-                if temp < 50:
-                    temp_color = Fore.GREEN
-                elif temp < 70:
-                    temp_color = Fore.YELLOW
-                else:
-                    temp_color = Fore.RED
-
-                print(f"{Fore.WHITE}      Temp: {temp_color}{temp}{DEG}{Style.RESET_ALL}")
-                print(f"{Fore.WHITE}      GPU Util: {Fore.CYAN}{util.gpu}%{Style.RESET_ALL}")
-                print(f"{Fore.WHITE}      Mem Util: {Fore.CYAN}{util.memory}%{Style.RESET_ALL}")
-            pynvml.nvmlShutdown()
-        except ImportError:
-            print(f"{Fore.WHITE}      (install pynvml for temp/utilization){Style.RESET_ALL}")
-        except Exception:
-            pass
 
         # CUDA version info
         print(f"{Fore.WHITE}  CUDA Version: {Fore.CYAN}{torch.version.cuda}{Style.RESET_ALL}")
