@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.8"
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "August Sletto", email = "augustsletto@gmail.com" }
 ]
 keywords = ["cuda", "gpu", "pytorch", "machine-learning", "deep-learning", "nvidia"]
 classifiers = [
@@ -37,9 +37,9 @@ full = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/cgpu"
-Repository = "https://github.com/yourusername/cgpu"
-Issues = "https://github.com/yourusername/cgpu/issues"
+Homepage = "https://github.com/augustsletto/cgpu"
+Repository = "https://github.com/augustsletto/cgpu"
+Issues = "https://github.com/augustsletto/cgpu/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/cgpu"]
