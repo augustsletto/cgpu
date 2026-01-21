@@ -14,11 +14,7 @@ or with uv:
 uv pip install cgpu-info
 ```
 
-**Note:** You need PyTorch installed separately. For temperature/utilization info, also install `pynvml`:
-
-```bash
-pip install torch pynvml
-```
+**Note:** You need PyTorch installed separately. 
 
 ## Usage
 
