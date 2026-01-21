@@ -5,13 +5,13 @@ Quick CUDA/GPU status summary for ML engineers. One import, one call, all the in
 ## Installation
 
 ```bash
-pip install cgpu
+pip install cgpu-info
 ```
 
 or with uv:
 
 ```bash
-uv pip install cgpu
+uv pip install cgpu-info
 ```
 
 **Note:** You need PyTorch installed separately. For temperature/utilization info, also install `pynvml`:

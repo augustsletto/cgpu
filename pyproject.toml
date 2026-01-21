@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cgpu"
+name = "cgpu-info"
 version = "0.1.0"
 description = "Quick CUDA/GPU status summary for ML engineers"
 readme = "README.md"
