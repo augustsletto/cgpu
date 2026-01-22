@@ -4,46 +4,14 @@ Quick CUDA/GPU status summary for ML engineers. One import, one call, all the in
 
 ## Installation
 
-**Full ML stack** (recommended for new projects):
 ```bash
-pip install cgpu-info[full]
+uv pip install cgpu-info
 ```
 
-This installs: torch, torchvision, torchaudio, numpy, pandas, matplotlib, seaborn, scikit-learn
-
-**Other options:**
+Or with pip:
 ```bash
-# Just PyTorch stack
-pip install cgpu-info[torch]
-
-# Just data science packages (no torch)
-pip install cgpu-info[science]
-
-# Minimal - just cgpu (if you already have torch)
 pip install cgpu-info
 ```
-
-Works with uv too:
-```bash
-uv pip install cgpu-info[full]
-```
-
-### Installing PyTorch with specific CUDA version
-
-For specific CUDA versions, use the built-in install helper:
-```bash
-# Install torch with CUDA 12.1
-cgpu install --cuda 12.1
-
-# Install torch with CUDA 12.4
-cgpu install --cuda 12.4
-
-# Install torch with CUDA 11.8
-cgpu install --cuda 11.8
-
-# Install CPU-only torch
-cgpu install --cuda cpu
-``` 
 
 ## Usage
 
@@ -96,6 +64,38 @@ That's it! You'll see a colorful summary like:
 - Temperature (color-coded: green < 50°C, yellow < 70°C, red >= 70°C)
 - GPU/Memory utilization
 - CUDA, cuDNN, and PyTorch versions
+
+## Installing PyTorch with specific CUDA version
+
+Use the built-in install helper to get PyTorch with your desired CUDA version:
+```bash
+# Install torch with CUDA 12.1
+cgpu install --cuda 12.1
+
+# Install torch with CUDA 12.4
+cgpu install --cuda 12.4
+
+# Install torch with CUDA 11.8
+cgpu install --cuda 11.8
+
+# Install CPU-only torch
+cgpu install --cuda cpu
+```
+
+## Optional dependencies
+
+If you want to install additional ML packages along with cgpu:
+
+```bash
+# Full ML stack: torch, torchvision, torchaudio, numpy, pandas, matplotlib, seaborn, scikit-learn
+uv pip install cgpu-info[full]
+
+# Just PyTorch stack
+uv pip install cgpu-info[torch]
+
+# Just data science packages (no torch)
+uv pip install cgpu-info[science]
+```
 
 ## License
 

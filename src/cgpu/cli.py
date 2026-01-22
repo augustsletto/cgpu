@@ -40,9 +40,9 @@ def install_torch(cuda_version=None, package_manager=None):
 
     # Build the install command
     if package_manager == "uv":
-        cmd = ["uv", "pip", "install"]
+        cmd = ["uv", "pip", "install", "--reinstall"]
     else:
-        cmd = [sys.executable, "-m", "pip", "install"]
+        cmd = [sys.executable, "-m", "pip", "install", "--force-reinstall"]
 
     cmd.extend(TORCH_PACKAGES)
 
