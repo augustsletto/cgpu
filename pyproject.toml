@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "cgpu-info"
-version = "0.2.1"
+version = "0.3.0"
 description = "Quick CUDA/GPU status summary for ML engineers"
 readme = "README.md"
 license = "MIT"
@@ -28,6 +28,7 @@ classifiers = [
 ]
 dependencies = [
     "colorama>=0.4.0",
+    "tqdm>=4.0.0",
 ]
 
 [project.optional-dependencies]

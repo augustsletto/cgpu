@@ -24,6 +24,22 @@ device = cgpu()
 model.to(device)
 ```
 
+### Progress bar with GPU metrics
+```python
+from cgpu import ctqdm
+
+# Drop-in replacement for tqdm - shows GPU temp, VRAM, and utilization
+for batch in ctqdm(dataloader, desc="Training"):
+    ...
+```
+
+Output:
+```
+Training:  50%|█████     | 50/100 [00:05<00:05] 42°C | 8.2/24.0GB | GPU: 87%
+```
+
+Install `nvidia-ml-py` for temperature and utilization. Without it, VRAM usage is still shown via torch.
+
 ### CLI
 ```bash
 # Show GPU status
