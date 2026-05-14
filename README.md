@@ -1,6 +1,6 @@
 # cgpu
 
-Quick CUDA/GPU status summary for ML engineers. One import, one call, all the info you need.
+Quick CUDA/GPU status summary. One import, one call, all the info you need.
 
 ## Installation
 
